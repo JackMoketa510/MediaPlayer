@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: White;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fxmlplayer.Controller">
+   <bottom>
+      <HBox prefHeight="26.0" prefWidth="600.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="playBtn" fitHeight="17.0" fitWidth="15.0" onMouseClicked="#playVideo" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="19.0" fitWidth="18.0" onMouseClicked="#nextBttnClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../backward.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="18.0" fitWidth="16.0" onMouseClicked="#stopVideo" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../stop.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="18.0" fitWidth="20.0" onMouseClicked="#nextBtnClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../forward.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="22.0" fitWidth="214.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="timeDuration" prefHeight="17.0" prefWidth="65.0" text="00:00" textFill="#f80303">
+               <font>
+                  <Font name="Tahoma Bold" size="11.0" />
+               </font>
+            </Label>
+            <Slider fx:id="volumeSlider" onMouseClicked="#volumeClicked" prefHeight="14.0" prefWidth="68.0" />
+            <ImageView fx:id="muteBtn" fitHeight="20.0" fitWidth="23.0" onMouseClicked="#muteButtonClicked" pickOnBounds="true" preserveRatio="true" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <center>
+      <VBox prefHeight="307.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <MediaView fx:id="mediaView" fitHeight="300.0" fitWidth="550.0" layoutX="20.0" layoutY="10.0" x="10.0" y="20.0">
+               <VBox.margin>
+                  <Insets left="30.0" top="20.0" />
+               </VBox.margin>
+            </MediaView>
+            <Slider fx:id="progressBar" prefHeight="45.0" prefWidth="600.0">
+               <padding>
+                  <Insets top="20.0" />
+               </padding></Slider>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
